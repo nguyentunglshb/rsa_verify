@@ -152,6 +152,21 @@ router.post('/login', async (req, res) => {
 })
 
 //edit
-// router.put('/:')
+router.post('/:_id', async (req, res) => {
+    try {
+        const user = await User.findByIdAndUpdate(req.params._id, req.body)
+        res.status(200).json({
+            success: true,
+            message: "Update user successfuly",
+            user
+        })
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            success: false,
+            message: "Internal server error"
+        })
+    }
+})
 
 module.exports = router

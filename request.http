@@ -1,0 +1,7 @@
+
+POST http://localhost:5000/user/629e0cae1c23e7760ecdcbdd
+Content-Type: application/json
+
+{
+    "name": "Nguyen Viet Tung"
+}
